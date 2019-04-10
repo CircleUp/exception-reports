@@ -83,7 +83,7 @@ class S3ErrorStorage(ErrorStorage):
             return uploaded_url
 
         except Exception:
-            logger.warning("Error saving exception to s3", exc_info=True)
+            logger.error("Error saving exception to s3", exc_info=True)
 
 
 def upload_to_s3(aws_key, aws_secret, bucket, filename, contents, content_type):
